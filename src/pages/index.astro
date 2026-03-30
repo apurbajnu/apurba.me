@@ -2,137 +2,266 @@
 import Layout from '../layouts/Layout.astro';
 
 const name = "Apurba Podder";
-const title = "Full Stack Developer & Tech Enthusiast";
-const bio = "I build scalable web applications and explore the boundaries of modern technology. Welcome to my personal corner of the internet.";
+const role = "Software Engineer & Automation Architect";
 ---
 
 <Layout>
 	<main>
+		<!-- Hero Section -->
 		<section class="hero">
+			<div class="badge">Available for Strategic Projects</div>
 			<h1>{name}</h1>
-			<p class="title">{title}</p>
-			<p class="bio">{bio}</p>
-			<div class="cta">
-				<a href="https://github.com/apurbajnu" class="button">GitHub</a>
-				<a href="mailto:apurba@apurba.me" class="button secondary">Contact Me</a>
+			<p class="tagline">Engineering high-performance digital solutions across <span>Web, Mobile, and AI ecosystems.</span></p>
+			<div class="cta-group">
+				<a href="#work" class="btn-primary">View Portfolio</a>
+				<a href="mailto:hello@apurba.me" class="btn-secondary">Get in Touch</a>
 			</div>
 		</section>
 
-		<section class="links">
-			<h2>Current Projects</h2>
-			<div class="grid">
-				<div class="card">
-					<h3>Shopify Tools</h3>
-					<p>Specialized scrapers and automation for Shopify stores.</p>
+		<!-- Core Expertise -->
+		<section class="expertise" id="services">
+			<div class="section-header">
+				<span class="sub">What I Do</span>
+				<h2>Core Expertise</h2>
+			</div>
+			<div class="expertise-grid">
+				<div class="expertise-card">
+					<div class="icon">🛍️</div>
+					<h3>Shopify & WordPress</h3>
+					<p>Custom app development, theme engineering, and performance optimization for high-scale e-commerce.</p>
 				</div>
-				<div class="card">
-					<h3>Portfolio</h3>
-					<p>This Astro-powered site with automated deployment.</p>
+				<div class="expertise-card">
+					<div class="icon">🚀</div>
+					<h3>Laravel & Node.js</h3>
+					<p>Building robust, scalable backends and complex API architectures for modern web applications.</p>
+				</div>
+				<div class="expertise-card">
+					<div class="icon">📱</div>
+					<h3>Mobile App Dev</h3>
+					<p>Crafting seamless cross-platform mobile experiences with focus on performance and UI/UX.</p>
+				</div>
+				<div class="expertise-card">
+					<div class="icon">🤖</div>
+					<h3>AI & Automation</h3>
+					<p>Custom Node.js workflows and Automa scripts integrated with OpenAI/Anthropic APIs to streamline operations.</p>
 				</div>
 			</div>
 		</section>
+
+		<!-- Demo Project Section -->
+		<section class="work" id="work">
+			<div class="section-header">
+				<span class="sub">Portfolio</span>
+				<h2>Selected Works</h2>
+			</div>
+			<div class="work-grid">
+				<div class="work-card">
+					<div class="work-img">Demo Product A</div>
+					<div class="work-content">
+						<h4>SaaS Platform Demo</h4>
+						<p>Full-stack Laravel application featuring AI-driven data analysis and automated reporting.</p>
+						<div class="tags"><span>Laravel</span> <span>OpenAI</span> <span>Vue.js</span></div>
+					</div>
+				</div>
+				<div class="work-card">
+					<div class="work-img">Demo Product B</div>
+					<div class="work-content">
+						<h4>Shopify Public App</h4>
+						<p>High-rated app currently serving 1000+ merchants with real-time inventory automation.</p>
+						<div class="tags"><span>Node.js</span> <span>Shopify API</span> <span>React</span></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer/Contact -->
+		<footer>
+			<div class="footer-content">
+				<p>© {new Date().getFullYear()} {name} — Built with Astro 6.0</p>
+				<div class="socials">
+					<a href="https://github.com/apurbajnu">GitHub</a>
+					<a href="#">LinkedIn</a>
+					<a href="#">Twitter</a>
+				</div>
+			</div>
+		</footer>
 	</main>
 </Layout>
 
 <style>
-	main {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 4rem 2rem;
-		font-family: 'Inter', system-ui, sans-serif;
-		color: #1a1a1a;
+	:root {
+		--primary: #3245ff;
+		--secondary: #bc52ee;
+		--bg: #ffffff;
+		--text-main: #0f172a;
+		--text-muted: #64748b;
+		--border: #e2e8f0;
+		--accent-bg: #f8fafc;
 	}
 
+	main {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+		font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+		color: var(--text-main);
+	}
+
+	/* Hero Section */
 	.hero {
+		padding: 8rem 0 6rem;
 		text-align: center;
-		margin-bottom: 4rem;
+	}
+
+	.badge {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		background: #eff6ff;
+		color: var(--primary);
+		border-radius: 99px;
+		font-size: 0.875rem;
+		font-weight: 600;
+		margin-bottom: 2rem;
 	}
 
 	h1 {
-		font-size: 3.5rem;
+		font-size: clamp(2.5rem, 8vw, 4.5rem);
+		font-weight: 800;
+		letter-spacing: -0.02em;
 		margin: 0;
-		background: linear-gradient(to right, #3245ff, #bc52ee);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
+		line-height: 1.1;
 	}
 
-	.title {
-		font-size: 1.5rem;
-		color: #4b5563;
-		margin: 1rem 0;
+	.tagline {
+		font-size: clamp(1.125rem, 3vw, 1.5rem);
+		color: var(--text-muted);
+		max-width: 700px;
+		margin: 1.5rem auto 3rem;
+		line-height: 1.6;
+	}
+
+	.tagline span {
+		color: var(--text-main);
 		font-weight: 500;
 	}
 
-	.bio {
-		font-size: 1.125rem;
-		line-height: 1.6;
-		color: #6b7280;
-		max-width: 600px;
-		margin: 0 auto;
-	}
-
-	.cta {
-		margin-top: 2rem;
+	.cta-group {
 		display: flex;
 		gap: 1rem;
 		justify-content: center;
 	}
 
-	.button {
-		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+	.btn-primary {
+		background: var(--text-main);
+		color: white;
+		padding: 1rem 2rem;
+		border-radius: 12px;
 		text-decoration: none;
 		font-weight: 600;
-		transition: all 0.2s;
+		transition: transform 0.2s ease;
 	}
 
-	.button:not(.secondary) {
-		background: #3245ff;
-		color: white;
-	}
-
-	.button.secondary {
-		border: 1px solid #e5e7eb;
-		color: #374151;
-	}
-
-	.button:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-	}
-
-	.links h2 {
-		font-size: 1.5rem;
-		border-bottom: 2px solid #f3f4f6;
-		padding-bottom: 0.5rem;
-		margin-bottom: 2rem;
-	}
-
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 1.5rem;
-	}
-
-	.card {
-		padding: 1.5rem;
-		border: 1px solid #e5e7eb;
+	.btn-secondary {
+		border: 1px solid var(--border);
+		color: var(--text-main);
+		padding: 1rem 2rem;
 		border-radius: 12px;
-		transition: border-color 0.2s;
+		text-decoration: none;
+		font-weight: 600;
+		transition: background 0.2s ease;
 	}
 
-	.card:hover {
-		border-color: #3245ff;
+	.btn-primary:hover { transform: translateY(-2px); }
+	.btn-secondary:hover { background: var(--accent-bg); }
+
+	/* Expertise Grid */
+	.expertise { padding: 6rem 0; }
+	.section-header { margin-bottom: 4rem; }
+	.sub { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; }
+	h2 { font-size: 2.5rem; margin-top: 0.5rem; }
+
+	.expertise-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 2rem;
 	}
 
-	.card h3 {
-		margin: 0 0 0.5rem 0;
-		color: #111827;
+	.expertise-card {
+		padding: 2.5rem;
+		background: var(--accent-bg);
+		border-radius: 24px;
+		border: 1px solid var(--border);
+		transition: all 0.3s ease;
 	}
 
-	.card p {
-		margin: 0;
-		color: #6b7280;
+	.expertise-card:hover {
+		border-color: var(--primary);
+		background: white;
+		box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
+	}
+
+	.icon { font-size: 2rem; margin-bottom: 1.5rem; }
+	.expertise-card h3 { margin-bottom: 1rem; font-size: 1.25rem; }
+	.expertise-card p { color: var(--text-muted); line-height: 1.6; }
+
+	/* Work Section */
+	.work { padding-bottom: 8rem; }
+	.work-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2.5rem;
+	}
+
+	.work-card {
+		border-radius: 24px;
+		overflow: hidden;
+		border: 1px solid var(--border);
+	}
+
+	.work-img {
+		height: 240px;
+		background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 600;
+		color: var(--text-muted);
+	}
+
+	.work-content { padding: 2rem; }
+	.work-content h4 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+	.work-content p { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+	.tags { display: flex; gap: 0.5rem; }
+	.tags span {
+		background: #f1f5f9;
+		padding: 0.25rem 0.75rem;
+		border-radius: 6px;
+		font-size: 0.75rem;
+		font-weight: 600;
+	}
+
+	/* Footer */
+	footer {
+		padding: 4rem 0;
+		border-top: 1px solid var(--border);
+	}
+
+	.footer-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: var(--text-muted);
 		font-size: 0.875rem;
+	}
+
+	.socials { display: flex; gap: 1.5rem; }
+	.socials a { color: var(--text-main); text-decoration: none; font-weight: 500; }
+
+	@media (max-width: 768px) {
+		.hero { padding: 5rem 0; }
+		.cta-group { flex-direction: column; }
+		.footer-content { flex-direction: column; gap: 2rem; text-align: center; }
+		.work-grid { grid-template-columns: 1fr; }
 	}
 </style>
