@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Apurba Podder | Engineering & Automation</title>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-content">
+				<a href="/" class="logo">Apurba.me</a>
+				<div class="links">
+					<a href="/">Home</a>
+					<a href="/blog">Blog</a>
+				</div>
+			</div>
+		</nav>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--primary: #3245ff;
+		--text-main: #0f172a;
+		--text-muted: #64748b;
+		--border: #e2e8f0;
+	}
+
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		font-family: 'Inter', system-ui, sans-serif;
+	}
+
+	nav {
+		border-bottom: 1px solid var(--border);
+		padding: 1rem 0;
+		position: sticky;
+		top: 0;
+		background: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(12px);
+		z-index: 100;
+	}
+
+	.nav-content {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		font-weight: 800;
+		font-size: 1.25rem;
+		text-decoration: none;
+		color: var(--text-main);
+		letter-spacing: -0.02em;
+	}
+
+	.links {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.links a {
+		text-decoration: none;
+		color: var(--text-muted);
+		font-weight: 500;
+		transition: color 0.2s;
+	}
+
+	.links a:hover {
+		color: var(--primary);
+	}
+
+	/* Blog Post Styling */
+	.post-container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 6rem 1.5rem;
+		line-height: 1.8;
+		color: var(--text-main);
+	}
+
+	.post-container h1 { font-size: 3rem; margin-bottom: 1rem; letter-spacing: -0.02em; }
+	.post-container h2 { font-size: 2rem; margin-top: 3rem; margin-bottom: 1rem; }
+	.post-container h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+	.post-container p { margin-bottom: 1.5rem; font-size: 1.125rem; }
+	.post-container ul { margin-bottom: 2rem; padding-left: 1.5rem; }
+	.post-container li { margin-bottom: 0.5rem; font-size: 1.125rem; }
+
+	.post-container pre {
+		background: #f8fafc;
+		padding: 1.5rem;
+		border-radius: 12px;
+		border: 1px solid var(--border);
+		overflow-x: auto;
+		margin: 2rem 0;
+	}
+
+	.post-container code {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.9rem;
+	}
+</style>
