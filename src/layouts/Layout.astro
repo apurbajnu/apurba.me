@@ -6,18 +6,78 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Apurba Podder | Engineering & Automation</title>
 	</head>
 	<body>
+		<nav>
+			<div class="nav-content">
+				<a href="/" class="logo">Apurba.me</a>
+				<div class="links">
+					<a href="/">Home</a>
+					<a href="/blog">Blog</a>
+				</div>
+			</div>
+		</nav>
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
+	:root {
+		--primary: #3245ff;
+		--text-main: #0f172a;
+		--text-muted: #64748b;
+		--border: #e2e8f0;
+	}
+
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		font-family: 'Inter', system-ui, sans-serif;
+	}
+
+	nav {
+		border-bottom: 1px solid var(--border);
+		padding: 1rem 0;
+		position: sticky;
+		top: 0;
+		background: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(12px);
+		z-index: 100;
+	}
+
+	.nav-content {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		font-weight: 800;
+		font-size: 1.25rem;
+		text-decoration: none;
+		color: var(--text-main);
+		letter-spacing: -0.02em;
+	}
+
+	.links {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.links a {
+		text-decoration: none;
+		color: var(--text-muted);
+		font-weight: 500;
+		transition: color 0.2s;
+	}
+
+	.links a:hover {
+		color: var(--primary);
 	}
 </style>
