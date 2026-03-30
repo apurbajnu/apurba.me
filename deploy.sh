@@ -24,11 +24,13 @@ fi
 
 # Build project
 echo "Building project..." >> "$DEPLOY_LOG"
-npm run build >> "$DEPLOY_LOG" 2>&1
-
-# Restart PM2 process
-echo "Restarting apurba-portfolio..." >> "$DEPLOY_LOG"
-pm2 restart apurba-portfolio >> "$DEPLOY_LOG" 2>&1
+if npm run build >> "$DEPLOY_LOG" 2>&1; then
+    echo "Build successful, restarting PM2..." >> "$DEPLOY_LOG"
+    # Restart PM2 process
+    pm2 restart apurba-portfolio >> "$DEPLOY_LOG" 2>&1
+else
+    echo "❌ Build failed! Not restarting PM2 to keep existing version online." >> "$DEPLOY_LOG"
+fi
 
 echo "Deployment completed at $(date)" >> "$DEPLOY_LOG"
 echo "===========================================" >> "$DEPLOY_LOG"
