@@ -1,6 +1,6 @@
 site:
   name: Apurba.me
-  site: 'http://107.172.168.113:4500'
+  site: 'https://www.apurba.me'
   base: '/'
   trailingSlash: false
 
