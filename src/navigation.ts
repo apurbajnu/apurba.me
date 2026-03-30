@@ -19,8 +19,8 @@ export const headerData = {
       href: getPermalink('/#projects'),
     },
     {
-      text: 'Blog',
-      href: getBlogPermalink(),
+      text: 'Thoughts',
+      href: getPermalink('/#thoughts'),
     },
   ],
   actions: [{ text: 'Contact Me', href: 'mailto:apurba@apurba.me' }],
