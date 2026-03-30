@@ -16,10 +16,7 @@ import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehype
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  output: 'static',
 
   server: {
     host: '0.0.0.0',
