@@ -1,14 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Apurba Podder — Full Stack Developer',
@@ -18,26 +16,6 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Fragment slot="announcement"></Fragment>
-  <Fragment slot="header">
-    <Header
-      links={[
-        { text: 'Home', href: '/' },
-        { text: 'About', href: '/#about' },
-        { text: 'Skills', href: '/#skills' },
-        { text: 'Projects', href: '/#projects' },
-        { text: 'Contact', href: 'mailto:apurba@apurba.me' },
-        { text: 'GitHub', href: 'https://github.com/apurbajnu', target: '_blank' },
-      ]}
-      actions={[
-        {
-          text: 'Contact Me',
-          href: 'mailto:apurba@apurba.me',
-        },
-      ]}
-      isSticky
-      showToggleTheme
-    />
-  </Fragment>
 
   <!-- Hero Widget ******************* -->
 
